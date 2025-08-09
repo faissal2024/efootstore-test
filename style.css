@@ -84,7 +84,7 @@ h1 {
 
 header .logo{
     background: transparent; /* إزالة الخلفية السوداء */
-    max-height: 80px; /* تصغير ارتفاع الشعار */
+    max-height: 60px; /* تصغير ارتفاع الشعار */
     width: auto; /* الحفاظ على التناسق */
 }
 
