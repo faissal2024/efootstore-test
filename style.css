@@ -1,0 +1,846 @@
+/* google font */
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background-color: #000d33;
+}
+
+
+:root {
+  --primary-color: #2c046d;
+}
+
+* {
+    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+section{
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  position: relative;
+  margin-bottom: 8%;
+  color: #fff;
+  text-align: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+
+/* header section */
+
+
+
+.navbar-mobile,
+.mobile-menu {
+  display: none;
+}
+
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgb(4, 25, 95);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.705);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  flex-wrap: nowrap;
+}
+
+.nav-desktop {
+  flex-grow: 1;
+  text-align: center;
+}
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+
+header .logo{
+    background: transparent; /* إزالة الخلفية السوداء */
+    max-height: 80px; /* تصغير ارتفاع الشعار */
+    width: auto; /* الحفاظ على التناسق */
+}
+
+
+
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#navbar li a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cbcfda;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: rgb(255, 0, 0);
+}
+
+#button-header {
+  margin-left: 20px;
+}
+
+.button-header {
+  background: #332cf2;
+  border: 0;
+  border-radius: 0.375rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem 1.25rem;
+  transition: transform 0.2s;
+  user-select: none;
+}
+
+.button-header:hover {
+  transform: scale(1.05);
+}
+
+/* -------- Navbar الهاتف --------- */
+.navbar-mobile {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: rgb(4, 25, 95);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+}
+
+/* زر الهامبرغر */
+.hamburger-btn {
+  width: 30px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.hamburger-btn .bar {
+  height: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* تحريك شكل زر الهامبرغر عند الفتح */
+.hamburger-btn.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-btn.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* نافذة القائمة الكاملة */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(3, 19, 70, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1099;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.mobile-menu nav ul li {
+  margin: 50px 0;
+}
+
+.mobile-menu nav ul li a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu nav ul li a:hover {
+  color: rgb(255, 0, 0);
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 768px) {
+  /* اخفاء الهيدر الكبير */
+  .nav-desktop,
+  #button-header {
+    display: none;
+  }
+
+  /* اظهار شريط الهاتف */
+  .navbar-mobile {
+    display: flex;
+  }
+
+  /* تصغير الشعار في الشريط */
+  .navbar-mobile .logo {
+    max-width: 100px;
+    height: auto;
+  }
+}
+
+
+
+
+/* home section */
+
+  
+  
+.home {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 60px;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  margin: 0;
+  background: url(eFootball-2025-Large-Size-Image-1.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-direction: row;
+}
+
+
+.home::before {
+  content: "";
+position: fixed;
+top: 0;
+ left: 0;
+width: 100%;
+ height: 100vh;
+background-color: rgba(0, 0, 0, 0.5); /* 0.5 = درجة التعتيم */ 
+z-index: 0;
+}
+
+
+
+body > * {
+z-index: 1;
+position: relative;
+}
+
+.home > * {
+z-index: 1;
+position: relative;
+}
+
+
+.background-home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* يجعل الخلفية خلف المحتوى */
+
+}
+
+
+.content {
+  text-align: center;
+  max-width: 50%;
+}
+
+.content h1 {
+  font-size: 40px;
+  color: #5246ff;
+  margin-bottom: 20px;
+  box-shadow: #000000;
+}
+
+
+
+.content h3 {
+
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+
+#services{
+  
+  justify-content: center;
+  align-items: center;
+  height: 90vh; /* اجعل الخلفية تغطي الشاشة بالكامل */
+  background: linear-gradient(to right, #010108, #000d33);
+  margin: auto;
+  padding: 80px;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+
+
+
+#ser-card{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+
+.container-title {
+  text-align: center;
+  padding: 0 !important;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 60px;
+}
+
+.card {
+  max-width: 400px;
+  border: 0;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.container-card {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(71deg, #162c8f, #2a0146, #080509);
+  background-clip: padding-box;
+  border-radius: 45px;
+  padding: 40px;
+  img {
+    margin-bottom: 32px;
+  }
+}
+
+.bg-yellow-box {
+  position: relative;
+}
+
+.bg-yellow-box::after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  content: "";
+  z-index: -1;
+  border-radius: 45px;
+}
+
+.bg-yellow-box::after {
+  background: linear-gradient(71deg, #110e0e, #afa220, #110e0e);
+}
+
+.card-title {
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-style: normal;
+  font-size: 28px;
+  padding-bottom: 8px;
+}
+
+.card-description {
+  font-weight: 600;
+  line-height: 32px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  max-width: 470px;
+}
+
+
+
+
+.account-card {
+  flex: 0 0 auto;
+  width: 300px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(78, 3, 3, 0.767);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.cards-section {
+justify-content: center;
+  align-items: center;
+  height: 90vh;
+ background: linear-gradient(135deg, #0a0a44, #1e0a52, #132691);
+  padding: 50px 20px;
+  color: white;
+  margin: auto;
+  padding: 80px;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+
+
+.acounts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+ 
+.accounts_h1 h1{
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+} 
+
+.account-card {
+  flex: 0 0 auto;
+  width: 300px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+.account-card {
+  background: #1e2a38;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(32, 53, 69, 0.6);
+  width: 320px;
+  margin: 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.account-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(33, 150, 243, 0.7);
+  border-color: #2196f3;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: filter 0.4s ease;
+}
+
+.account-card:hover .card-img {
+  filter: brightness(1);
+}
+
+.card-info {
+  padding: 25px 30px;
+  text-align: right;
+  direction: rtl;
+  color: #e0e6f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-info h2 {
+  font-size: 24px;
+ margin-bottom: 15px;
+  color: #64b5f6;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 5px #2196f3aa;
+}
+
+.card-info ul {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.card-info ul li {
+  font-size: 16px;
+  color: #b0c4de;
+  margin-bottom: 8px;
+  position: relative;
+  padding-right: 20px;
+}
+
+.card-info ul li::before {
+  content: "✔️";
+  position: absolute;
+  right: 0;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.price {
+  font-weight: 900;
+  color: #ff4081;
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-align: center;
+  direction: ltr;
+  text-shadow: 0 0 6px #ff4081aa;
+}
+
+
+
+
+
+
+
+
+
+.card-info ul li {
+  font-size: 15px;
+color: white;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.price {
+  font-weight: bold;
+  color: #ffdded;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.order-btn {
+  display: inline-block;
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.order-btn:hover {
+  background-color: #0d8ae0;
+}
+
+.view-img-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.view-img-btn:hover {
+  background-color: #43a047;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+
+
+
+
+.order-btn {
+  background-color: #2196f3;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.5);
+}
+
+.order-btn:hover {
+  background-color: #1769aa;
+  box-shadow: 0 10px 25px rgba(23, 105, 170, 0.7);
+}
+
+
+
+
+
+.profit-section {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0066cc, #00bfff);
+  color: white;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.5);
+}
+.profit-section h2 {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 5px #003366;
+}
+
+.limited-offer {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  animation: pulse 2s infinite;
+  text-shadow: 1px 1px 8px #ff4500;
+}
+
+.profit-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.profit-card {
+  background: white;
+  color: #0066cc;
+  border-radius: 20px;
+  padding: 25px;
+  width: 210px;
+  box-shadow: 0 6px 15px rgba(0, 102, 204, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.profit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 102, 204, 0.5);
+}
+
+.profit-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.profit-card p {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+@keyframes pulse {
+  0% { text-shadow: 1px 1px 8px #ff4500; }
+  50% { text-shadow: 1px 1px 18px #ff6347; }
+  100% { text-shadow: 1px 1px 8px #ff4500; }
+}
+
+
+
+@media (min-width: 340px) {
+  .card__footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
+.card__job-summary {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+}
+
+.card__btn {
+  font-size: 14px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow,transform;
+  background: radial-gradient( 100% 100% at 100% 0%, #4ec1e0 0%, #2940ec 100% );
+  box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+  padding: 0 2em;
+  border-radius: 0.3em;
+  color: #fff;
+  height: 2.6em;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .home {
+  width: 100%;
+  min-height: 100vh; /* تأخذ ارتفاع الشاشة بالكامل */
+  background-size: cover; /* تغطي الشاشة بالكامل */
+  background-position: center; /* تضمن تمركز الخلفية */
+  background-repeat: no-repeat; /* تمنع تكرار الخلفية */
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+  }
+
+  .content {
+      max-width: 100%;
+  }
+
+  .content h1 {
+  font-size: 30px;
+  }
+
+    .content h3 {
+  font-size: 16px;
+  }
+
+
+
+
+
+  #services{
+    padding: 15px;
+  }
+
+
+
+  .ser-h1 h1{
+    padding: 10px;
+  }
+
+
+  #ser-card{
+    margin-top: 60px;
+  }
+
+
+
+  .card {
+    max-width: 90%;
+  }
+
+
+
+
+  .cards-section {
+    flex-direction: column;
+    overflow-x: hidden;
+    align-items: center;
+  }
+
+
+  .contact_img img{
+    display: none;
+  }
+  
+
+
+
+
+
+}
+
