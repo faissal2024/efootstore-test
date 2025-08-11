@@ -7,167 +7,124 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg py-3 fixed-top shadow" style="background: linear-gradient(90deg, #1c0f45, #000056); z-index: 1050;">
+  <div class="container d-flex align-items-center justify-content-between">
 
-<!--header -->
+    <!-- اللوغو في أقصى اليمين -->
+    <a class="navbar-brand order-1 order-lg-0" href="#home">
+      <img src="efootstore.png" alt="Logo" height="40">
+    </a>
 
-<header class="header" id="header">
-  <a href="#home" class="logo-link"><img src="efootstore.png" alt="logo" class="logo"></a>
-
-  <nav class="nav-desktop">
-    <ul id="navbar">
-       <li><a href="#home">الرئيسية</a></li>
-      <li><a href="#cards-section">المتجر</a></li>
-      <li><a href="#sell-request">بيع حساب</a></li>
-      <li><a href="#mediation">خدمة الوساطة</a></li>
-      <li><a href="سياسة الاستخدام.html">سياسة الاستخدام</a></li>
-      <li><a href="من نحن.html">من نحن</a></li>
-      <li><a href="الشروط والاحكام.html">الشروط والأحكام</a></li>
-    </ul>
-  </nav>
-
-  <div id="button-header" class="button-header-desktop">
-    <button class="button-header" role="button">شراء الان!</button>
-  </div>
-
-  <!-- Navbar الهاتفي -->
-  <div class="navbar-mobile">
-  
-    <button id="toggle-menu" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobile-menu" class="hamburger-btn">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-  </div>
-</header>
-
-<!-- قائمة الهاتف (نافذة كاملة تظهر عند الضغط) -->
-<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
-  <nav>
-    <ul>
-        <li><a href="#home">الرئيسية</a></li>
-      <li><a href="#cards-section">المتجر</a></li>
-      <li><a href="#">بيع حساب</a></li>
-      <li><a href="#mediation">خدمة الوساطة</a></li>
-      <li><a href="سياسة الاستخدام.html">سياسة الاستخدام</a></li>
-      <li><a href="من نحن.html">من نحن</a></li>
-      <li><a href="الشروط والاحكام.html">الشروط والأحكام</a></li>
-    </ul>
-  </nav>
-</div>
-
-<section class="home" id="home">
-    
-
-    <div dir="rtl" class="content">
-   <h1>  مرحبا بكم في eFootStore    
-    <br>
-     متجر حسابات eFootball
-    </h1>
-
-
-
-<h3 dir="rtl">
-في eFootStore، نقدم لك أفضل وأحدث حسابات لعبة eFootball مع ضمان كامل ومصداقية عالية.<br>
-نحن نعمل كوسيط موثوق بين البائعين والمشترين داخل المغرب وخارجه، مع توفير وسائل دفع آمنة ومتنوعة مثل PayPal وWafaCash وOrange Money.<br>
-هدفنا هو تسهيل تجربتك في شراء وبيع حسابات اللعبة بسرعة وسلاسة مع دعم فني مستمر لضمان رضاك التام.<br>
-انضم اليوم لعائلتنا وتمتع بحسابات بأفضل الأسعار وأسرع تسليم.
-</h3>
-            <br>
-            
-            <button class="button-header" role="button">شراء الان!</button>
-
+    <!-- الروابط في الوسط -->
+    <div class="collapse navbar-collapse justify-content-center order-3 order-lg-1" id="navbarNav">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link text-white mx-2" href="#home">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link text-white mx-2" href="#cards-section">المتجر</a></li>
+        <li class="nav-item"><a class="nav-link text-white mx-2" href="#sell-request">بيع حساب</a></li>
+        <li class="nav-item"><a class="nav-link text-white mx-2" href="#mediation">الوساطة</a></li>
+        <li class="nav-item"><a class="nav-link text-white mx-2" href="سياسة الاستخدام.html">سياسة الاستخدام</a></li>
+        <li class="nav-item"><a class="nav-link text-white mx-2" href="من نحن.html">من نحن</a></li>
+        <li class="nav-item"><a class="nav-link text-white mx-2" href="الشروط والاحكام.html">الشروط</a></li>
+      </ul>
     </div>
 
+    <!-- زر شراء الآن في أقصى اليسار -->
+    <a href="#cards-section" class="btn btn-warning fw-bold d-none d-lg-block order-2">شراء الآن!</a>
 
+    <!-- زر الهامبرغر ثابت -->
+    <label class="hamburger">
+      <input type="checkbox" aria-label="فتح القائمة">
+      <svg viewBox="0 0 32 32" width="32" height="32" role="img" aria-hidden="true" focusable="false">
+        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+        <path class="line" d="M7 16 27 16"></path>
+      </svg>
+    </label>
+  </div>
+</nav>
 
+<!-- صورة الهيدر خارج النافبار وتحتها مباشرة بدون مسافة كبيرة -->
+<div style="margin-top: 70px; text-align: center;">
+ 
+</div>
+
+<section class="home" id="home" style="padding-top: 20px;">
+  <div dir="rtl" class="content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 350px; padding: 40px 10px;">
+    <h1 style="font-size: 2rem; font-weight: bold; color: #ffd700; margin-bottom: 20px; line-height: 1.3;">
+      مرحبا بكم في eFootStore<br>
+      متجر حسابات eFootball
+    </h1>
+    <h3 style="max-width: 700px; font-size: 1.13rem; color: #fff7f7; margin-bottom: 30px;">
+      في <strong>eFootStore</strong> نقدم لك أحدث وأفضل حسابات <strong>eFootball</strong> مع ضمان كامل ومصداقية عالية.<br>
+      نحن وسيط موثوق بين البائعين والمشترين داخل المغرب وخارجه، ونوفر وسائل دفع آمنة ومتنوعة مثل <strong>PayPal</strong> و<strong>WafaCash</strong> و<strong>Orange Money</strong>.<br>
+      هدفنا تسهيل عملية شراء وبيع الحسابات بسرعة وسلاسة، مع دعم فني متواصل لضمان رضاك التام.<br>
+      انضم إلينا اليوم واستمتع بأفضل الأسعار وأسرع خدمة تسليم!
+    </h3>
+    <button class="button-header" role="button" style="background: linear-gradient(90deg, #ffd700, #ffb300); color: #1c0f45; font-weight: bold; font-size: 1.2rem; padding: 14px 36px; border: none; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: background 0.3s; cursor: pointer;">
+      شراء الان!
+    </button>
+  </div>
 </section>
 
 
 
 
+<section id="services" class="services" style="padding: 60px 0; background: #111;">
+  <div style="text-align: center; margin-bottom: 40px;">
+    <h1 style="font-size: 2.5rem; color: #ffd700;">لماذا eFootStore</h1>
+  </div>
 
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
 
+    <!-- بطاقة -->
+    <div data-aos="zoom-in" style="background: #1a1a1a; width: 300px; padding: 25px; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.3); text-align: center; transition: 0.3s ease; cursor: default;"
+         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="icon/quality.png" alt="" style="width: 50px; margin-bottom: 15px;">
+      <h3 style="color: #ffd700;">جودة لا مثيل لها</h3>
+      <p style="color: #ccc; font-size: 15px;">
+        خدمة احترافية، منصة مستقرة، وكود نظيف يحمي حقوقك ويضمن سلامة الحسابات.
+      </p>
+    </div>
 
-<section id="services" class="services">
+    <!-- بطاقة -->
+<div data-aos="zoom-in" data-aos-delay="100" style="background: #1a1a1a; width: 300px; padding: 25px; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.3); text-align: center; transition: 0.3s ease;"
+         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="icon/web-design.png" alt="" style="width: 50px; margin-bottom: 15px;">
+      <h3 style="color: #ffd700;">تصميم يجذب الأنظار</h3>
+      <p style="color: #ccc; font-size: 15px;">
+        واجهة عصرية، متجاوبة وسهلة التصفح تعكس احترافية مشروعك.
+      </p>
+    </div>
 
-    <div data-aos="fade-up" class="ser-h1">
+    <!-- بطاقة -->
+    <div data-aos="zoom-in" data-aos-delay="200" style="background: #1a1a1a; width: 300px; padding: 25px; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.3); text-align: center; transition: 0.3s ease;"
+         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="icon/fast(1).png" alt="" style="width: 50px; margin-bottom: 15px;">
+      <h3 style="color: #ffd700;">سرعة وفعالية</h3>
+      <p style="color: #ccc; font-size: 15px;">
+        خدماتنا سريعة، آمنة، وتشمل كل ما تحتاجه في منصة واحدة.
+      </p>
+    </div>
 
-    <h1>لماذا eFootStore</h1>
-
-     </div>
-
-
-     <div id="ser-card" class="ser-card">
-
-        <div data-aos="flip-left" class="card">
-            <div class="container-card bg-yellow-box">
-             <img src="icon/quality.png" alt="">
-              <p class="card-title">جودة لا مثيل لها في eFootStore!</p>
-              <p class="card-description">
-              
-
-نحن نحرص على تقديم خدمة احترافية لبيع وشراء حسابات eFootball بجودة عالية، مع تفاصيل دقيقة وإدارة موثوقة. 
-نضمن لك تجربة سلسة،
- منصة مستقرة، 
-وكود نظيف يحمي حقوقك ويضمن سلامة حساباتك. 
-راحتك وثقتك في efootstore هي أولويتنا دائمًا
-              
-              </p>
-            </div>
-          </div>
-
-
-           <div data-aos="flip-left" class="card">
-            <div class="container-card bg-yellow-box">
-             <img src="icon/web-design.png" alt="">
-              <p class="card-title">  تصميم يجذب الأنظار!  </p>
-              <p class="card-description">
-               تصميم يجذب الأنظار!  
-في eFootStore ندمج بين الإبداع والحداثة لنقدم لك تصاميم جذابة ومتجاوبة تتناسب مع كل الأجهزة. نركز على سهولة الاستخدام وتجربة مستخدم سلسة تعكس هوية الموقع بشكل احترافي وتشد انتباه الزوار منذ اللحظة الأولى.  
-كل هذا مع ضمان راحتكم وسهولة تصفحكم، لأن راحتكم أولويتنا.
-              
-              </p>
-            </div>
-          </div>
-
-          <div data-aos="flip-left" class="card">
-            <div class="container-card bg-yellow-box">
-             <img src="icon/fast(1).png" alt="">
-              <p class="card-title"> خدمات eFootStore بسرعة مذهلة!  </p>
-              <p class="card-description">
-                خدمات eFootStore بسرعة مذهلة!  
-نوفر لك تجربة تصفح سريعة وسلسة، مع خدمات متكاملة تشمل:  
- بيع وشراء حسابات eFootball  
- طلب بيع حسابك بسهولة  
- وساطة موثوقة لضمان الأمان  
-كل شيء في مكان واحد، بخدمة سريعة وآمنة!
-              
-              </p>
-            </div>
-          </div>
-
-
-
-
-     </div>
-
-
-
+  </div>
 </section>
 
 
 
 <section id="how-to" style="direction: rtl; font-family: 'Cairo', sans-serif; background: #121212; color: #f0f0f0; padding: 50px 20px;">
-  <div style="max-width: 900px; margin: auto; background: #1e1e1e; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
-    <h2 style="text-align: center; color: #00bcd4; font-size: 32px; margin-bottom: 25px;">كيف تبيع أو تشتري حساب على eFootstore؟</h2>
+  <div style="max-width: 900px;  background: #1e1e1e; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" data-aos="fade-up">
+    <h2 style="text-align: center; color: #00bcd4; font-size: 32px; margin-bottom: 25px;" data-aos="zoom-in">
+      كيف تبيع أو تشتري حساب على eFootstore؟
+    </h2>
     
     <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
 
-      <div style="flex: 1 1 300px; min-width: 280px;">
+      <div style="flex: 1 1 300px; min-width: 280px;" data-aos="fade-left">
         <h3 style="color: #00e5ff; margin-bottom: 15px;">طريقة البيع:</h3>
         <ol style="line-height: 2; padding-right: 20px; font-size: 18px;">
           <li>عرض حسابك للبيع عن طريق ملء نموذج البيع.</li>
@@ -178,9 +135,9 @@
         </ol>
       </div>
 
-      <div style="flex: 1 1 300px; min-width: 280px;">
+      <div style="flex: 1 1 300px; min-width: 280px;" data-aos="fade-up">
         <h3 style="color: #00e5ff; margin-bottom: 15px;">طريقة الشراء:</h3>
-<ol style="line-height: 2; padding-right: 20px; font-size: 18px;">
+        <ol style="line-height: 2; padding-right: 20px; font-size: 18px;">
           <li>تصفح العروض واختر الحساب المناسب لك.</li>
           <li>التواصل مع البائع أو طلب وساطة من الموقع.</li>
           <li>اتفاق الطرفان على السعر وشروط البيع.</li>
@@ -189,7 +146,7 @@
         </ol>
       </div>
 
-      <div style="flex: 1 1 300px; min-width: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div style="flex: 1 1 300px; min-width: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center;" data-aos="fade-right">
         <h3 style="color: #00e5ff; margin-bottom: 15px;">شاهد الشرح بالفيديو:</h3>
         <div style="width: 100%; aspect-ratio: 16 / 9; background: #333; border-radius: 10px; overflow: hidden;">
           <!-- ضع هنا رابط الفيديو أو كود iframe -->
@@ -202,13 +159,12 @@
 </section>
 
 
-
 <!-- page 1 -->
 
 
 
 
-<section class="cards-section" id="cards-section">
+<section class="cards-section" id="cards-section" style="direction: rtl; font-family: 'Cairo', sans-serif; background: #121212; color: #f0f0f0; padding: 50px 20px;">
   <div class="accounts_h1">
     <h1>الحسابات</h1>
   </div>
@@ -216,257 +172,132 @@
   <!-- مجموعة الكروت الأولى -->
   <div class="acounts">
 
-
-  <div class="account-card">
-    <img src="contact img/account2.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2>لا توجد حسابات معروضة حالياً.</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account1.jpeg')">تكبير الصورة</button>
+    <div class="account-card" data-aos="fade-up">
+      <img src="contact img/account2.jpeg" alt="حساب eFootball" class="card-img">
+      <div class="card-info">
+        <h2>لا توجد حسابات معروضة حالياً.</h2>
+        <ul>
+          <li>ربط: غير متوفر حالياً</li>
+          <li>لا يوجد حساب معروض بعد</li>
+          <li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
+        </ul>
+        <p class="price">السعر: 150 درهم</p>
+        <a href="#طلب" class="order-btn">اطلب الآن</a>
+        <button class="view-img-btn" onclick="showPopup('contact img/account1.jpeg')">تكبير الصورة</button>
+      </div>
     </div>
-  </div>
 
-
-   <div class="account-card">
-    <img src="contact img/account2.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2>لا توجد حسابات معروضة حالياً.</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account2.jpeg')">تكبير الصورة</button>
+    <div class="account-card" data-aos="fade-up" data-aos-delay="100">
+      <img src="contact img/account2.jpeg" alt="حساب eFootball" class="card-img">
+      <div class="card-info">
+        <h2>لا توجد حسابات معروضة حالياً.</h2>
+        <ul>
+          <li>ربط: غير متوفر حالياً</li>
+          <li>لا يوجد حساب معروض بعد</li>
+          <li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
+        </ul>
+        <p class="price">السعر: 150 درهم</p>
+        <a href="#طلب" class="order-btn">اطلب الآن</a>
+        <button class="view-img-btn" onclick="showPopup('contact img/account2.jpeg')">تكبير الصورة</button>
+      </div>
     </div>
-  </div>
 
-
-
-  <div class="account-card">
-    <img src="contact img/account3.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2> لا توجد حسابات معروضة حالياً.</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account3.jpeg')">تكبير الصورة</button>
+    <div class="account-card" data-aos="fade-up" data-aos-delay="200">
+      <img src="contact img/account3.jpeg" alt="حساب eFootball" class="card-img">
+      <div class="card-info">
+        <h2>لا توجد حسابات معروضة حالياً.</h2>
+        <ul>
+          <li>ربط: غير متوفر حالياً</li>
+          <li>لا يوجد حساب معروض بعد</li>
+          <li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
+        </ul>
+        <p class="price">السعر: 150 درهم</p>
+        <a href="#طلب" class="order-btn">اطلب الآن</a>
+        <button class="view-img-btn" onclick="showPopup('contact img/account3.jpeg')">تكبير الصورة</button>
+      </div>
     </div>
-  </div>
 
-
-   <div class="account-card">
-    <img src="contact img/account4.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2>لا توجد حسابات معروضة حالياً.</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account4.jpeg')">تكبير الصورة</button>
+    <div class="account-card" data-aos="fade-up" data-aos-delay="300">
+      <img src="contact img/account4.jpeg" alt="حساب eFootball" class="card-img">
+      <div class="card-info">
+        <h2>لا توجد حسابات معروضة حالياً.</h2>
+        <ul>
+          <li>ربط: غير متوفر حالياً</li>
+          <li>لا يوجد حساب معروض بعد</li>
+          <li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
+        </ul>
+        <p class="price">السعر: 150 درهم</p>
+        <a href="#طلب" class="order-btn">اطلب الآن</a>
+        <button class="view-img-btn" onclick="showPopup('contact img/account4.jpeg')">تكبير الصورة</button>
+      </div>
     </div>
-  </div>
-
-
 
   </div>
 
   <!-- مجموعة الكروت الثانية -->
   <div class="acounts">
 
-
-  <div class="account-card">
-    <img src="contact img/account1.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2>حساب eFootball أسطوري</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account1.jpeg')">تكبير الصورة</button>
+    <div class="account-card" data-aos="fade-up" data-aos-delay="400">
+      <img src="contact img/account1.jpeg" alt="حساب eFootball" class="card-img">
+      <div class="card-info">
+        <h2>حساب eFootball أسطوري</h2>
+        <ul>
+          <li>ربط: غير متوفر حالياً</li>
+          <li>لا يوجد حساب معروض بعد</li>
+          <li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
+        </ul>
+        <p class="price">السعر: 150 درهم</p>
+        <a href="#طلب" class="order-btn">اطلب الآن</a>
+        <button class="view-img-btn" onclick="showPopup('contact img/account1.jpeg')">تكبير الصورة</button>
+      </div>
     </div>
-  </div>
 
-
-   <div class="account-card">
-    <img src="contact img/account2.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2>حساب eFootball أسطوري</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account2.jpeg')">تكبير الصورة</button>
+    <div class="account-card" data-aos="fade-up" data-aos-delay="500">
+      <img src="contact img/account2.jpeg" alt="حساب eFootball" class="card-img">
+      <div class="card-info">
+        <h2>حساب eFootball أسطوري</h2>
+        <ul>
+          <li>ربط: غير متوفر حالياً</li>
+          <li>لا يوجد حساب معروض بعد</li>
+          <li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
+        </ul>
+        <p class="price">السعر: 150 درهم</p>
+        <a href="#طلب" class="order-btn">اطلب الآن</a>
+        <button class="view-img-btn" onclick="showPopup('contact img/account2.jpeg')">تكبير الصورة</button>
+      </div>
     </div>
-  </div>
 
-
-
-  <div class="account-card">
-    <img src="contact img/account3.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2>حساب eFootball أسطوري</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account3.jpeg')">تكبير الصورة</button>
+    <div class="account-card" data-aos="fade-up" data-aos-delay="600">
+      <img src="contact img/account3.jpeg" alt="حساب eFootball" class="card-img">
+      <div class="card-info">
+        <h2>حساب eFootball أسطوري</h2>
+        <ul>
+          <li>ربط: غير متوفر حالياً</li>
+          <li>لا يوجد حساب معروض بعد</li>
+          <li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
+        </ul>
+        <p class="price">السعر: 150 درهم</p>
+        <a href="#طلب" class="order-btn">اطلب الآن</a>
+        <button class="view-img-btn" onclick="showPopup('contact img/account3.jpeg')">تكبير الصورة</button>
+      </div>
     </div>
-  </div>
 
-
-   <div class="account-card">
-    <img src="contact img/account4.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2>حساب eFootball أسطوري</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account4.jpeg')">تكبير الصورة</button>
+    <div class="account-card" data-aos="fade-up" data-aos-delay="700">
+      <img src="contact img/account4.jpeg" alt="حساب eFootball" class="card-img">
+      <div class="card-info">
+        <h2>حساب eFootball أسطوري</h2>
+        <ul>
+          <li>ربط: غير متوفر حالياً</li>
+          <li>لا يوجد حساب معروض بعد</li>
+          <li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
+        </ul>
+        <p class="price">السعر: 150 درهم</p>
+        <a href="#طلب" class="order-btn">اطلب الآن</a>
+        <button class="view-img-btn" onclick="showPopup('contact img/account4.jpeg')">تكبير الصورة</button>
+      </div>
     </div>
-  </div>
-
-
 
   </div>
-
-<!-- مجموعة الكروت التالثة -->
-
-    <div class="acounts">
-
-
-  <div class="account-card">
-    <img src="contact img/account1.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2>حساب eFootball أسطوري</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account1.jpeg')">تكبير الصورة</button>
-    </div>
-  </div>
-
-
-   <div class="account-card">
-    <img src="contact img/account2.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2>حساب eFootball أسطوري</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account2.jpeg')">تكبير الصورة</button>
-    </div>
-  </div>
-
-
-
-  <div class="account-card">
-    <img src="contact img/account3.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2>حساب eFootball أسطوري</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account3.jpeg')">تكبير الصورة</button>
-    </div>
-  </div>
-
-
-   <div class="account-card">
-    <img src="contact img/account4.jpeg" alt="حساب eFootball" class="card-img">
-    <div class="card-info">
-      <h2>حساب eFootball أسطوري</h2>
-      <ul>
-       
-<li>ربط: غير متوفر حالياً</li>
-<li>لا يوجد حساب معروض بعد</li>
-<li>اطلب بيع حسابك قبل ما يتم ملء المكان✅</li>
-
-
-      </ul>
-      <p class="price">السعر: 150 درهم</p>
-      <a href="#طلب" class="order-btn">اطلب الآن</a>
-      <button class="view-img-btn" onclick="showPopup('contact img/account4.jpeg')">تكبير الصورة</button>
-    </div>
-  </div>
-
-
-
-  </div>
-
-  <!-- يمكنك تكرار div.acounts كلما أردت إضافة مجموعة جديدة -->
 </section>
 
 
@@ -479,7 +310,7 @@
 
 
 <section id="sell-request" style="direction: rtl; font-family: 'Cairo', sans-serif; padding: 50px; background: #0f172a; color: #f8fafc;">
-  <div style="max-width: 900px; margin: auto; background: #14181e; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+  <div style="max-width: 900px; background: #14181e; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
     
     <h2 style="text-align: center; color: #38bdf8; font-size: 30px; margin-bottom: 20px;">
       💼 طلب بيع حساب eFootball
@@ -522,7 +353,7 @@
 
 
 <section id="mediation" style="direction: rtl; font-family: 'Cairo', sans-serif; padding: 50px; background: #121212; color: #f0f0f0;">
-  <div style="max-width: 900px; margin: auto; background: #1e1e1e; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+  <div style="max-width: 900px; background: #1e1e1e; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
     
     <h2 style="text-align: center; color: #00bcd4; font-size: 30px; margin-bottom: 20px;">
       🔁 خدمة الوساطة الآمنة
@@ -619,6 +450,8 @@
 
 
 <script src="script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
