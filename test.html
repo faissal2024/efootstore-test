@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cards Section — e.g. like image</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #1b1b1b;
+    --card-dark: #2b2b2b;
+    --muted: #9fa0a0;
+    --green: #9af14b; /* left accent */
+    --blue: #4da6ff;  /* right accent */
+    --pink: #f045e6;  /* center background */
+    --card-width: 320px;
+    --gap: 48px;
+    --accent-shadow: 0 18px 30px rgba(0,0,0,0.6);
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:"Poppins",system-ui,Segoe UI,Roboto,Arial;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+    color:#eee;
+  }
+
+  .cards-wrap{
+    display:flex;
+    gap:var(--gap);
+    align-items:center;
+    position:relative;
+  }
+
+  /* Decorative slanted strokes behind cards */
+  .stroke{
+    position:absolute;
+    width:260px;
+    height:4px;
+    background:transparent;
+    transform-origin:center;
+    box-shadow: none;
+  }
+
+  /* left strokes (green) */
+  .stroke.left-1{ background:linear-gradient(90deg,var(--green),var(--green)); transform: rotate(-12deg); left:-170px; top: 30px; width:340px; opacity:0.95;}
+  .stroke.left-2{ background:linear-gradient(90deg,var(--green),var(--green)); transform: rotate(18deg); left:-120px; top:220px; width:260px; opacity:0.9;}
+  .stroke.left-3{ background:linear-gradient(90deg,var(--green),var(--green)); transform: rotate(-35deg); left:-200px; top:420px; width:420px; opacity:0.85;}
+
+  /* right strokes (blue) */
+  .stroke.right-1{ background:linear-gradient(90deg,var(--blue),var(--blue)); transform: rotate(8deg); right:-170px; top: 30px; width:340px; opacity:0.95;}
+  .stroke.right-2{ background:linear-gradient(90deg,var(--blue),var(--blue)); transform: rotate(-20deg); right:-120px; top:220px; width:260px; opacity:0.9;}
+  .stroke.right-3{ background:linear-gradient(90deg,var(--blue),var(--blue)); transform: rotate(35deg); right:-200px; top:420px; width:420px; opacity:0.85;}
+
+  /* Single card style */
+  .card{
+    width:var(--card-width);
+    min-height:420px;
+    background:var(--card-dark);
+    padding:36px 28px;
+    text-align:center;
+    position:relative;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.5);
+    border-radius:4px;
+    overflow:visible;
+    transition:transform .28s ease, box-shadow .28s ease;
+  }
+  .card:hover{ transform: translateY(-14px); box-shadow: 0 28px 50px rgba(0,0,0,0.6); }
+
+  /* icon square */
+  .icon-wrap{
+    width:86px;
+    height:86px;
+    margin:0 auto 20px;
+    border: 2px solid rgba(255,255,255,0.06);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .icon-wrap svg{ width:46px; height:46px; display:block; }
+
+  h3{
+    margin:8px 0 14px;
+    font-weight:600;
+    font-size:22px;
+    color: #efefef;
+  }
+
+  p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+    margin:0 0 26px;
+    padding:0 8px;
+  }
+
+  .btn{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:4px;
+    font-weight:600;
+    text-decoration:none;
+    cursor:pointer;
+    border: none;
+    transition: transform .18s ease;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.45) inset;
+  }
+  .btn:active{ transform: translateY(1px); }
+
+  /* left card accents */
+  .card.left{
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+  .card.left .icon-wrap{
+    border-color: rgba(154,241,75,0.24);
+    box-shadow: 0 0 0 6px rgba(154,241,75,0.03) inset;
+  }
+  .card.left .icon-wrap svg{ stroke: var(--green); fill: var(--green); }
+  .card.left h3{ color:#fff; }
+  .card.left .btn{
+    background:var(--green);
+    color:#111;
+  }
+
+  /* center card (pink) */
+  .card.center{
+    background: linear-gradient(180deg, var(--pink) 0%, var(--pink) 100%);
+    color:#111;
+    box-shadow: 0 30px 80px rgba(240,69,230,0.08);
+    border-radius:2px;
+    transform-origin:center;
+  }
+  .card.center .icon-wrap{
+    border: 3px solid rgba(0,0,0,0.2);
+    background: transparent;
+  }
+  .card.center .icon-wrap svg{ stroke: #111; fill: none; }
+  .card.center h3{ color:#111; font-weight:700; }
+  .card.center p{ color: rgba(0,0,0,0.55); }
+  .card.center .btn{
+    background:#111;
+    color:var(--pink);
+  }
+
+  /* small pink vertical lines left/right of center card */
+  .card.center::before,
+  .card.center::after{
+    content:'';
+    position:absolute;
+    width:6px;
+    height:86%;
+    top:10px;
+    background:linear-gradient(180deg,var(--pink),var(--pink));
+    opacity:0.9;
+  }
+  .card.center::before{ left:-18px; transform: rotate(-6deg); border-radius:2px; }
+  .card.center::after { right:-18px; transform: rotate(6deg); border-radius:2px; }
+
+  /* top & bottom short lines on center */
+  .center-top, .center-bottom{
+    position:absolute;
+    height:6px;
+    left:28px;
+    right:28px;
+    background:transparent;
+  }
+  .center-top{ top:-14px; border-top:4px solid var(--pink); border-radius:4px; }
+  .center-bottom{ bottom:-14px; border-bottom:4px solid var(--pink); border-radius:4px; }
+
+  /* right card accents */
+  .card.right{
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+  .card.right .icon-wrap{
+    border-color: rgba(77,166,255,0.16);
+    box-shadow: 0 0 0 6px rgba(77,166,255,0.02) inset;
+  }
+  .card.right .icon-wrap svg{ stroke: var(--blue); fill: var(--blue); }
+  .card.right .btn{
+    background:var(--blue);
+    color:#111;
+  }
+
+  /* small underline below h3 (visual) */
+  .card h3::after{
+    content:'';
+    display:block;
+    width:56px;
+    height:3px;
+    margin:14px auto 0;
+    border-radius:3px;
+    background:linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.06));
+  }
+
+  /* responsive */
+  @media (max-width:1100px){
+    .cards-wrap{gap:22px; flex-wrap:wrap; justify-content:center}
+    .stroke{display:none}
+    .card{width:280px}
+  }
+  @media (max-width:560px){
+    body{padding:18px}
+    .card{width:100%; max-width:420px; min-height:360px}
+    .card.center::before,.card.center::after{display:none}
+    .center-top,.center-bottom{display:none}
+  }
+
+</style>
+</head>
+<body>
+
+
+<div class="cards-wrap">
+
+
+  <!-- decorative strokes -->
+  <span class="stroke left-1" aria-hidden="true"></span>
+  <span class="stroke left-2" aria-hidden="true"></span>
+  <span class="stroke left-3" aria-hidden="true"></span>
+
+  <span class="stroke right-1" aria-hidden="true"></span>
+  <span class="stroke right-2" aria-hidden="true"></span>
+  <span class="stroke right-3" aria-hidden="true"></span>
+
+  <!-- Left card -->
+  <div class="card left" role="article" aria-label="Designing card">
+    <div class="icon-wrap" aria-hidden="true">
+      <!-- brush icon (SVG) -->
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg" >
+        <path d="M3 21c.6-2 3.2-3.4 6.2-3.1 1.1.1 2.1-.6 2.9-1.4l6-6c1.2-1.2 1.2-3.1 0-4.2-1.2-1.2-3.1-1.2-4.2 0l-6 6c-.8.8-1.5 1.8-1.4 2.9C6.4 17.8 5 20.4 3 21z" stroke="none"/>
+      </svg>
+    </div>
+
+    <h3>Designing</h3>
+    <p>لوريم إيبسوم هو نص شكلي يستخدم في صناعات الطباعة والتنضيد، هنا وصف قصير يشرح الخدمة.</p>
+
+    <button class="btn">Read More</button>
+  </div>
+
+  <!-- Center card -->
+  <div class="card center" role="article" aria-label="Development card">
+    <div class="center-top"></div>
+
+    <div class="icon-wrap" aria-hidden="true" style="border-color: rgba(0,0,0,0.25);">
+      <!-- code icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="16 18 22 12 16 6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        <polyline points="8 6 2 12 8 18" stroke-linecap="round" stroke-linejoin="round"></polyline>
+      </svg>
+    </div>
+
+    <h3>Development</h3>
+    <p>لوريم إيبسوم هو نص شكلي يستخدم كنموذج في تصميم الواجهات وتجربة المستخدم. وصف مختصر للخدمة.</p>
+
+    <button class="btn">Read More</button>
+
+    <div class="center-bottom"></div>
+  </div>
+
+  <!-- Right card -->
+  <div class="card right" role="article" aria-label="SEO card">
+    <div class="icon-wrap" aria-hidden="true">
+      <!-- magnifier icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="6" stroke="none"/>
+        <path d="M21 21l-4.35-4.35" stroke="none"/>
+        <path d="M13.5 9a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" stroke="none"/>
+      </svg>
+    </div>
+
+    <h3>SEO</h3>
+    <p>نص بسيط يشرح خدمة تحسين محركات البحث ويعرض موجزاً عن النتائج المتوقعة والميزات.</p>
+
+    <button class="btn">Read More</button>
+  </div>
+
+</div>
+
+</body>
+</html>
