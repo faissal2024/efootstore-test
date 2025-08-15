@@ -1,4 +1,3 @@
-
   const hamburgerInput = document.querySelector('.hamburger input[type="checkbox"]');
   const navbarCollapse = document.getElementById('navbarNav');
 
@@ -9,6 +8,7 @@
       navbarCollapse.classList.remove('show');
     }
   });
+
 
 
 const checkbox = document.querySelector('.hamburger input[type="checkbox"]');
